@@ -38,7 +38,7 @@ def add_meats(order_id, pizza):
     
 def calc_meats():
     i = random.randint(0, 4)
-    meats = ['pepperoni', 'sausage', 'ham', 'anchovies', 'salami', 'bacon', 'pepperoni', 'sausage', 'ham', 'anchovies', 'salami', 'bacon']
+    meats = ['義大利辣香腸', '香腸', '火腿', '鳀魚', '薩拉米', '培根', 'pepperoni', 'sausage', 'ham', 'anchovies', 'salami', 'bacon']
     selection = []
     if i == 0:
         return 'none'

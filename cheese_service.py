@@ -38,7 +38,7 @@ def add_cheese(order_id, pizza):
     
 def calc_cheese():
     i = random.randint(0, 6)
-    cheeses = ['extra', 'none', 'three cheese', 'goat cheese', 'extra', 'three cheese', 'goat cheese']
+    cheeses = ['特加乳酪', '不加乳酪', '三倍乳酪', '山羊乳酪', 'extra', 'three cheese', 'goat cheese']
     return cheeses[i]
 
 if __name__ == '__main__':

@@ -38,7 +38,7 @@ def add_sauce(order_id, pizza):
 
 def calc_sauce():
     i = random.randint(0, 8)
-    sauces = ['regular', 'light', 'extra', 'none', 'alfredo', 'regular', 'light', 'extra', 'alfredo']
+    sauces = ['正常', '淡', '濃', '不加', 'alfredo', 'regular', 'light', 'extra', 'alfredo']
     return sauces[i]
 
 if __name__ == '__main__':

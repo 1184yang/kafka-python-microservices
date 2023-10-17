@@ -11,10 +11,10 @@ class Pizza:
     
     def toJSON(self):
         return json.dumps(self, default=lambda o: o.__dict__,
-                          sort_keys=False, indent=4)
+                          sort_keys=False, indent=4, ensure_ascii=False)
     
     def __str__(self):
-        return json.dumps(self.__dict__)
+        return json.dumps(self.__dict__, ensure_ascii=False)
 
 class PizzaOrder:
     def __init__(self, count) -> None:
@@ -29,8 +29,8 @@ class PizzaOrder:
         return self.pizzas
     
     def __str__(self):
-        return json.dumps(self.__dict__)
+        return json.dumps(self.__dict__, ensure_ascii=False)
     
     def toJSON(self):
         return json.dumps(self, default=lambda o: o.__dict__,
-                          sort_keys=False, indent=4)
+                          sort_keys=False, indent=4, ensure_ascii=False)

@@ -4,6 +4,8 @@ import json
 import pizza_service
 
 app = Flask(__name__)
+app.json.ensure_ascii = False
+app.json_encoder
 
 @app.route('/')
 def hello():
@@ -19,6 +21,7 @@ def order_pizzas(count):
 # 取得訂單資料: curl http://localhost:5000/order/{{pizza-order-UUID}}
 @app.route('/order/<order_id>', methods=['GET'])
 def get_order(order_id):
+   print('order: {}'.format(pizza_service.get_order(order_id)))
    return pizza_service.get_order(order_id)
 
 # @app.before_request

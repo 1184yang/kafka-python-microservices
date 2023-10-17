@@ -38,7 +38,7 @@ def add_veggies(order_id, pizza):
 
 def calc_veggies():
     i = random.randint(0, 4)
-    veggies = ['tomato', 'olives', 'onions', 'peppers', 'pineapple', 'mushrooms', 'tomato', 'olives', 'onions', 'peppers', 'pineapple', 'mushrooms']
+    veggies = ['番茄', '橄欖', '洋蔥', '胡椒', '鳳梨', '蘑菇', 'tomato', 'olives', 'onions', 'peppers', 'pineapple', 'mushrooms']
     selection = []
     if i == 0:
         return 'none'
