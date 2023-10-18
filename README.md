@@ -29,10 +29,10 @@ Kafka Streams 現在可能是許多人開始工作時的預設選擇，但到 20
 
 ##### 運作範例
 
-這裡是一個簡單的使用 Kafka 的 Microservices 範例，知道他使用的方式就可以思考一下在我們的狀況下可以參考應用。
+這裡是一個簡單的使用 Kafka 的 Microservices 範例，知道它使用的方式就可以思考一下在我們的狀況下那些運作可以參考應用。
 
 開始時可透過 Web 應用程式訂購 Pizzas, 後端接到訂單後可以透過幾個微服務的運作按順序開始製作 Pizza,
-逐一添加醬料、起司、肉類及蔬菜，然後前台可查詢訂單狀態。
+逐一添加醬料、起司、肉類及蔬菜，然後 Web 前台可查詢訂單狀態。
 
 此範例由以下 5 個微服務依序完成披薩訂單的製作:
 
@@ -61,37 +61,43 @@ python3 ./veggie_service.py
 ```
 curl -X POST http://localhost:5000/order/2
 ```
-這將觸發一系列事件，從而產生包含五個披薩的披薩訂單，並且它將返回該披薩訂單的 UUID 編號。
+
+這將觸發一系列事件，從而產生包含兩個披薩的披薩訂單，並且它將返回該披薩訂單的 UUID 編號。
+
 ```
-{"order_id": "277221782659834575471238785989271283315"}
+{"order_id": "173296392152586628283665456967923585434"}
 ```
 
-可以用這披薩的訂單編號來查詢訂購的訂單。
+然後可以用這披薩的訂單編號來查詢訂購的訂單。
+
 ```
 curl http://localhost:5000/order/{{pizza-order-UUID}}
 ```
+
 例如:
+
 ```
-curl http://localhost:5000/order/277221782659834575471238785989271283315
+curl http://localhost:5000/order/173296392152586628283665456967923585434
 ```
+
 ```
 {
-    "id": "277221782659834575471238785989271283315",
+    "id": "173296392152586628283665456967923585434",
     "count": 2,
     "pizzas": [
         {
-            "order_id": "277221782659834575471238785989271283315",
-            "sauce": "extra",
-            "cheese": "goat cheese",
-            "meats": "anchovies & ham & pepperoni",
-            "veggies": "peppers & olives & onions"
+            "order_id": "173296392152586628283665456967923585434",
+            "sauce": "淡",
+            "cheese": "three cheese",
+            "meats": "義大利辣香腸 & 香腸 & sausage",
+            "veggies": "tomato & peppers & 鳳梨 & 蘑菇"
         },
         {
-            "order_id": "277221782659834575471238785989271283315",
-            "sauce": "alfredo",
-            "cheese": "extra",
-            "meats": "bacon & sausage & pepperoni",
-            "veggies": "peppers & olives"
+            "order_id": "173296392152586628283665456967923585434",
+            "sauce": "light",
+            "cheese": "特加乳酪",
+            "meats": "pepperoni",
+            "veggies": "胡椒 & pineapple & 蘑菇 & olives"
         }
     ]
 }
